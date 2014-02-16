@@ -6,7 +6,7 @@
 # catalog-version 2.0.1
 Name:		texlive-pmxchords
 Version:	2.0.1
-Release:	1
+Release:	2
 Summary:	Produce chord information to go with pmx output
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/pmxchords
@@ -17,7 +17,7 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Requires:	texlive-pmxchords.bin
+Provides:	texlive-pmxchords.bin = %{EVRD}
 
 %description
 The bundle supplements pmx, providing the means of typesetting
@@ -36,6 +36,7 @@ requirements.
 
 #-----------------------------------------------------------------------
 %files
+%{_bindir}/pmxchords
 %{_texmfdistdir}/scripts/pmxchords/ChordsTr.lua
 %{_texmfdistdir}/scripts/pmxchords/pmxchords.lua
 %{_texmfdistdir}/tex/generic/pmxchords/chords.tex
@@ -69,6 +70,10 @@ requirements.
 %build
 
 %install
+mkdir -p %{buildroot}%{_bindir}
+pushd %{buildroot}%{_bindir}
+    ln -sf %{_texmfdistdir}/scripts/pmxchords/pmxchords.lua pmxchords
+popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
