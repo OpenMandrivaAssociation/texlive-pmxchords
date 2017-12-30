@@ -5,8 +5,8 @@
 # catalog-license gpl2
 # catalog-version 2.0.1
 Name:		texlive-pmxchords
-Version:	2.0.1
-Release:	6
+Version:	2.0.2
+Release:	1
 Summary:	Produce chord information to go with pmx output
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/pmxchords
