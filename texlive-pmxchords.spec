@@ -1,18 +1,12 @@
-# revision 32443
-# category Package
-# catalog-ctan /support/pmxchords
-# catalog-date 2013-12-17 16:10:38 +0100
-# catalog-license gpl2
-# catalog-version 2.0.1
 Name:		texlive-pmxchords
-Version:	2.0.2
-Release:	2
+Version:	39249
+Release:	1
 Summary:	Produce chord information to go with pmx output
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/pmxchords
 License:	GPL2
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pmxchords.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pmxchords.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pmxchords.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pmxchords.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -27,12 +21,12 @@ to the required key signature; and support scripts for common
 requirements.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -65,14 +59,14 @@ requirements.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_bindir}
 pushd %{buildroot}%{_bindir}
-    ln -sf %{_texmfdistdir}/scripts/pmxchords/pmxchords.lua pmxchords
+ln -sf %{_texmfdistdir}/scripts/pmxchords/pmxchords.lua pmxchords
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
