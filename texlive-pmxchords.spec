@@ -1,6 +1,6 @@
 Name:		texlive-pmxchords
 Version:	39249
-Release:	1
+Release:	2
 Summary:	Produce chord information to go with pmx output
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/pmxchords
