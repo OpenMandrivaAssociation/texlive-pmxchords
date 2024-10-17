@@ -3,7 +3,7 @@ Version:	39249
 Release:	2
 Summary:	Produce chord information to go with pmx output
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/support/pmxchords
+URL:		https://www.ctan.org/tex-archive/support/pmxchords
 License:	GPL2
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pmxchords.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pmxchords.doc.r%{version}.tar.xz
